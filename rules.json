@@ -1,0 +1,41 @@
+{
+  "rules": [
+    {
+      "id": "AWS_ACCESS_KEY",
+      "description": "Posible Clave de Acceso AWS (AKIA)",
+      "regex": "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "RSA_PRIVATE_KEY",
+      "description": "Llave Privada RSA expuesta",
+      "regex": "-----BEGIN RSA PRIVATE KEY-----",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "OPENSSH_PRIVATE_KEY",
+      "description": "Llave Privada OpenSSH expuesta",
+      "regex": "-----BEGIN OPENSSH PRIVATE KEY-----",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "JWT_TOKEN",
+      "description": "JSON Web Token (JWT) Hardcodeado",
+      "regex": "ey[a-zA-Z0-9_]+\\.ey[a-zA-Z0-9_]+\\.[a-zA-Z0-9_-]+",
+      "severity": "HIGH"
+    },
+    {
+      "id": "GENERIC_API_KEY",
+      "description": "Asignación genérica de API Key",
+      "regex": "(?i)(api_key|apikey|secret|password|token)\\s*(:|=>|=|:=)\\s*['\"]([a-zA-Z0-9\\-_]{16,})['\"]",
+      "severity": "MEDIUM"
+    }
+  ],
+  "blacklisted_extensions": [
+    ".pem",
+    ".key",
+    ".sqlite",
+    ".db",
+    ".env.local"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "piston-scanner",
+  "version": "1.0.0",
+  "description": "Zero-Trust Local Auditor by Piston Quarks",
+  "main": "index.js",
+  "bin": {
+    "piston-scanner": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Rony Valverde",
+  "license": "ISC"
+}
